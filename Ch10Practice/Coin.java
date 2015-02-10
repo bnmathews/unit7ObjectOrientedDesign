@@ -11,7 +11,7 @@ public class Coin implements Comparable
        this.name = name;
    }
    
-   public int compareTo( Object otherObject ) //can use generics to get Coins here
+   public int compareTo( Object otherObject ) //can use generics (<Coin>) to get Coins here
    {
        Coin other = (Coin) otherObject;
        if ( this.value < other.value )
