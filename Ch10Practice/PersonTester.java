@@ -5,30 +5,45 @@ public class PersonTester
     {
         Scanner s = new Scanner(System.in);
         Person[] people = new Person[10];
-        for (Person p : people)
+        
+        for (int p = 0; p < people.length; p++)
         {
             System.out.print("Input the person's name: ");
-            p = new Person(s.next());
+            people[p] = new Person(s.next());
         }
         
-        for (int i = 0; i < people.length; i++)
+        Person curPerson = people[0];
+        
+        for (int j = 0; j < people.length; j++)
         {
-            for (int j = 0; j < people.length; j++)
+            //this is still kinda broken, try to fix it later.
+            curPerson = people[0];
+            for (int i = 1; i < people.length; i++)
             {
-                if (people[j].compareTo(people[i]) < 1)
+                if (curPerson.compareTo(people[i]) > 0)
                 {
-                    people[i] = people[j];
+                    people[i-1] = people[i];
+                    people[i] = curPerson;
                 }
-                else if (people[j].compareTo(people[i]) > 1)
+                System.out.println("\n");
+                for (Person p : people)
                 {
-                    people[j] = people[i];
+                    System.out.println(p);
                 }
+            }
+            
+            System.out.println("\nPass #"+ (j+1) + ":");
+            for (Person p : people)
+            {
+                System.out.println(p);
             }
         }
         
+        System.out.println("\nAlphabetized:");
         for (Person p : people)
         {
             System.out.println(p);
         }
+        
     }
 }
