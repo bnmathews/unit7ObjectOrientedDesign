@@ -7,7 +7,7 @@ public class Card
       name = "";
    }
    
-   public Card(String n) //this is what gets called from super()
+   public Card(String n) //this is what gets called from super(n)
    {
       name = n;
    }
