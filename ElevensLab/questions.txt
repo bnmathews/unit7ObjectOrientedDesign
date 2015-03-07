@@ -1,0 +1,69 @@
+Activity 3 Questions
+1. public String flip()
+    {
+        int flipchance = (int)(Math.random()*3);
+        if (flipchance < 2)
+        {
+            return("heads");
+        }
+        else
+        {
+            return("tails");
+        }
+    }
+    
+2.  (import java.util.Arrays first)
+    public static boolean arePermutations(int[] ar1, int[] ar2)
+    {
+        boolean doesWork = true;
+        if (ar1.length == ar2.length)
+        {
+            Arrays.sort(ar1);
+            Arrays.sort(ar2);
+            if (Arrays.equals(ar1,ar2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+3. 0,1,2,3
+
+Activity 8 Questions:
+1. They all play using the same deck of cards and a similar play patterns, the differences being each card's point value,
+   what cards can be removed at what time, and the number of cards in play at once.
+   -In thirteens, a 10-card board is used, and pairs of cards that add up to 13 can be removed (Jacks and Queens count as 11 
+   and 12 points, respectively), and Kings are removed on their own. 
+   -In tens, a 10-card board is used, and pairs adding up
+   to 10 can be removed. However, groups of Kings, Queens, Jacks, and tens can be removed, but only if the cover all the 
+   suits, like King of hearts, diamonds, spades, and clubs at once. 
+   -In elevens, a 9-card board is used, pairs of cards adding to 11 can be removed, and a group of 3 cards containing a Jack,
+   a Queen, and a King, can be removed as well.
+
+2. The variables are initialized withing the Board class using the ElevensBoard constructor. Within said constructor, since
+   ElevensBoard is a subclass of Board, it uses Board's constructor to ctually initialize the variables, but passes in its own
+   values using the super(BOARD_SIZE, RANKS, SUITS, POINT_VALUES) line.
+
+3. The two abstract methods the Board class provides are isLegal() and anotherPlayIsPossible(). Both of these could properly
+   handle some of the differences between Elevens, Thirteens, and Tens, in that one could have the possible
+   ThirteensBoard or TensBoard classes specify what moves are and aren't legal.
+
+Activity 9 Questions:
+1. Because regardless of what game is being played, it will always use a Card[] within the Board class, and all the size()
+   method does is return the length of that array, which would always return the correct value.
+
+2. Because as with the size() method, those will never change based on the game that is being played. The rules of what will
+   be removed or replaced may change, but the function will always remain the same.
+
+3. isLegal() and anotherPlayIsPossible() would both work polymorphically, as they would be defined by whatever class determines
+   the game functions, but this also means that all the other methods would need to be implemented in the game board's class as
+   well, making it highly inefficient as many work the same way.
+   
