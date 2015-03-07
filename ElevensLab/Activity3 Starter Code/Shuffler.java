@@ -90,7 +90,7 @@ public class Shuffler {
         int[] shuffled = new int[52];
         int r = 0;
         int curCard = 0;
-        for (int k = 51; k > 0; k--)
+        for (int k = cards.length-1; k > 0; k--)
         {
             r = (int)(Math.random()*k);
             curCard = cards[k];

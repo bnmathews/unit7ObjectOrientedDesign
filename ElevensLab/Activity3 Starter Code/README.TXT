@@ -1,13 +1,5 @@
-import java.util.Arrays;
-/**
- * Write a description of class Questions here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Questions
-{
-    public static String flip()
+Activity 3 Questions
+1. public String flip()
     {
         int flipchance = (int)(Math.random()*3);
         if (flipchance < 2)
@@ -20,6 +12,7 @@ public class Questions
         }
     }
     
+2.  (import java.util.Arrays first)
     public static boolean arePermutations(int[] ar1, int[] ar2)
     {
         boolean doesWork = true;
@@ -42,9 +35,4 @@ public class Questions
         }
     }
     
-    public static void main(String[] aaaaaaargs)
-    {
-        System.out.println(flip());
-        System.out.println( arePermutations(new int[]{1,2,3},new int[]{3,1,2}));
-    }
-}
+3. 0,1,2,3

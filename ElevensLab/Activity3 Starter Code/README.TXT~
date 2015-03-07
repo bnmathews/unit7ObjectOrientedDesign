@@ -1,0 +1,15 @@
+Activity 3 Questions
+1. public String flip()
+    {
+        int flipchance = (int)(Math.random()*3);
+        if (flipchance < 2)
+        {
+            return("heads");
+        }
+        else
+        {
+            return("tails");
+        }
+    }
+    
+2. 
